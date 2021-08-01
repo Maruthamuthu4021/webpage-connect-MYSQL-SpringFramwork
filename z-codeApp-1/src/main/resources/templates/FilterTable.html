@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Filter Table to Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body class="bg-info" >
+<div class="container text-center">
+      <h1 class="p-3 mb-2 bg-primary text-white">List of Team Details</h1>
+ <nav class="navbar navbar-dark bg-primary justify-content-between">
+  <a class="navbar-brand">Searching</a>
+  <form class="form-inline" action="#" th:action="@{/filter}"  method="get">
+    <input class="form-control mr-sm-2" type="search"  name="key" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success " type="submit">Click to Search</button>
+  </form>
+</nav>
+
+<table class="table table-bordered">
+		<thead class="thead-dark">
+			<tr>
+					<th>Token ID</th>
+					<th>Team Name</th>
+					<th>No. Of Candidate</th>
+					<th>Hours</th>
+					<th>Status</th>
+					<th>Date</th>
+					<th>Task Name</th>    
+                    <th>Delete</th>        		
+				</tr>
+		</thead>
+		<tr th:each="teamreport: ${  search }">
+			<td th:text="${ teamreport.tokenid    } ">Token ID</td>
+			<td th:text="${teamreport.teamname}">Team Name</td>
+			<td th:text="${teamreport.noofcandidate}">No. Of Candidate</td>
+			<td th:text="${teamreport.hours}">Hours</td>
+			<td th:text="${teamreport.status}">Status</td>
+			<td th:text="${teamreport.date}">Date</td>
+			<td th:text="${teamreport.taskname}">Task Name</td>							    
+		<td>
+			<a th:href="@{'/delete/' + ${teamreport.tokenid }}">Delete</a>
+		</td>
+			</tr>
+			</table>
+		</div>
+</body>
+</html>

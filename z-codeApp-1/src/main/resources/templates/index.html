@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body  class="bg-info"  >
+<div class="container text-center ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+  <a class="navbar-brand" th:href="@{/view}">Dash board</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  th:href="@{/index}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/filter}">Filter</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" th:href="@{/ }" >
+      <button class="btn btn-secondary my-2 my-sm-0"  type="submit">Log-in</button>
+    </form>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="display-4 font-weight-bold">Hello,MSM world...!</h1>
+  <p class="lead">“Success is not final; failure is not fatal: it is the courage to continue that counts.” – Winston Churchill.</p>
+  <hr class="my-4">
+  <p>“Play by the rules, but be ferocious.” – Phil Knight</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg"   th:href="@{/view}"  role="button">View Team Details</a>
+     <a class="btn btn-primary btn-lg"   th:href="@{/filter}" role="button">Click to Filter Details</a>
+       <a class="btn btn-primary btn-lg"   th:href="@{/add}" role="button">Add Team Details</a>
+  </p>
+</div>
+</div>
+</body>
+</html>

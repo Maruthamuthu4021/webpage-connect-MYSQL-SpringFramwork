@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body class="bg-info" >
+<div  class="container text-center" >
+      <h1 class="p-3 mb-2 bg-primary text-white">ADD Team Details</h1>
+<form action="#" th:action="@{/added}" th:object="${team}"  >
+<table class="table table-striped table-dark">
+			<tr>
+			<th colspan="2">ADD Team Details</th>
+			</tr>
+			<tr>
+					<td>Token ID</td>
+					<td ><input type="number"  disabled="disabled" name="Tokenid"/></td>
+				</tr>
+				<tr>
+					<td>Team Name</td>
+					<td><input type="text"  name="Teamname"></td>
+				</tr>
+				<tr>
+					<td>No. Of Candidate</td>
+					<td><input type="number"  name="Noofcandidate" ></td>
+				</tr>
+				<tr>
+					<td>Hours</td>
+					<td><input type="number"   name ="Hours"></td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td ><input type="radio"  name="Status" value="Open">Open
+					<input type="radio"  name="Status" value="Process">Process
+					<input type="radio"  name="Status" value="End">End</td>
+				</tr>
+				<tr>
+					<td>Date</td>
+					<td ><input type="date"  name="Date"></td>
+				</tr>
+				<tr>
+					<td>Task Name</td>
+					<td ><input type="text"  name="Taskname"></td>		
+				</tr>
+			<tr>
+			<td colspan="2"><button type="submit" class="btn btn-info">view Report</button> </td>
+			 </tr>
+			</table>
+			</form>
+		</div>
+</body>
+</html>
